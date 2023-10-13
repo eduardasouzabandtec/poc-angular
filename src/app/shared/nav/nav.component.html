@@ -1,10 +1,10 @@
 <mat-toolbar color="primary">
-  <button *ngIf="rota == '/shopping-cart'" mat-icon-button aria-label="Example icon-button with heart icon" (click)="directToShopping()">
+  <button *ngIf="rota == '/shopping-cart'" mat-icon-button aria-label="Example icon-button with back icon" (click)="directToShopping()">
     <mat-icon>keyboard_arrow_left</mat-icon>
   </button>
-  <span>Poc Mercadinho</span>
+  <span>Poc Pobre Mercadinho</span>
   <span class="spacer"></span>
-  <button #showBack mat-icon-button aria-label="Example icon-button with heart icon" (click)="directToShopping('/shopping-cart')">
-    <mat-icon>shopping_cart</mat-icon>
+  <button *ngIf="rota !== '/shopping-cart'" #showBack mat-icon-button aria-label="Example icon-button with shopping icon" (click)="directToShopping('/shopping-cart')">
+    <mat-icon>card_giftcard</mat-icon>
   </button>
 </mat-toolbar>

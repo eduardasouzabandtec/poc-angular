@@ -1,18 +1,4 @@
 <main>
-    <section class="card__container">
-        <mat-card *ngFor="let shopping of shoppings">
-            <mat-card-content class="card__container-shop">
-                <img src="{{'../../../assets/'+ shopping.image}}">
-                <span>{{ shopping.category }}</span>
-                <div class="footer" >
-                    <p>{{ shopping.name }}</p>
-                    <div class="button-left ">
-                        <button  mat-fab color="primary" matBadge="8" matBadgePosition="after" matBadgeColor="accent" aria-label="Example icon button with a bookmark icon">
-                            <mat-icon>add_shopping_cart</mat-icon>
-                        </button>
-                    </div>
-                </div>
-            </mat-card-content>
-        </mat-card>
-    </section>
-</main>
+   <app-card></app-card>
+   <app-card-footer *ngIf="productsService.emptyShoppingCart"></app-card-footer>
+</main> 

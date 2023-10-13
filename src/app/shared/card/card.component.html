@@ -1,0 +1,23 @@
+<section class="card__container">
+    <mat-card *ngFor="let shopping of shopping">
+        <mat-card-content class="card__container-shop">
+            <img src="{{'../../../assets/'+ shopping.image}}">
+            <span>{{ shopping.category }}</span>
+            <div class="footer">
+                <p>{{ shopping.name }}</p>
+                <span> {{ shopping.price | currency : 'BRL'}}</span>
+                <div class="button-left ">
+                    <button 
+                        mat-fab color="primary" 
+                        [matBadge]="shopping.amount" 
+                        matBadgePosition="after" 
+                        matBadgeColor="accent"
+                        aria-label="Example icon button with a bookmark icon"
+                        (click)="addAmountShoppings(shopping, value)">
+                        <mat-icon>add_shopping_cart</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</section>

@@ -1,0 +1,48 @@
+
+<section>
+    <mat-divider></mat-divider>
+
+    <mat-card class="card-footer__container">
+        <mat-card-content class="content">
+
+            <mat-list class="card-footer_list">
+                <div class="item" *ngFor="let product of shopping">
+                    <mat-list-item *ngIf="product.amount" >
+                        <div class="produto" >
+                            <div class="descricao">
+                                <p matListItemTitle>{{ product?.name }}</p>
+                                <span matListItemLine>{{ product?.price  | currency : 'BRL' }}</span>
+                            </div>
+                            <div class="button_action">
+                                
+                                  <button mat-icon-button (click)="addAmountShoppings(product)">
+                                    <mat-icon>add</mat-icon>
+                                  </button>
+                                  <P>{{ product?.amount }}</P>
+                                  <button mat-icon-button (click)="removeAmountShoppings(product)">
+                                    <mat-icon>remove</mat-icon>
+                                  </button>
+                                  
+                            </div>
+                        </div>
+                    </mat-list-item>
+
+                </div>
+            </mat-list>
+            <mat-divider class="divisor"></mat-divider>
+            <div class="last_container">
+                <div>
+                    <p > total {{ calCtotal | currency : 'BRL' }}</p>
+                    <p> total SEM SIGNAL {{ total | currency : 'BRL' }}</p>
+                </div>
+                <button 
+                mat-fab color="warn" 
+                aria-label="Example icon button with a bookmark icon"
+                (click)="productsService.clearShoopingCart()"
+                >
+                <mat-icon>remove_shopping_cart</mat-icon>
+            </button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</section>
